@@ -35,5 +35,3 @@ def get_movie_longest_runtime():
             title = movie.get('title')
     return title
 
-
-print(get_movie_longest_runtime())
