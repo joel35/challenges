@@ -11,8 +11,8 @@ def calc_bmi(weight, length):
 
 def create_parser():
     parser = argparse.ArgumentParser(description='Calculate your BMI.')
-    parser.add_argument('-w', '--weight', dest='weight', help='Your weight in kg')
-    parser.add_argument('-l', '--length', dest='length', help='Your length in cm')
+    parser.add_argument('-w', '--weight', dest='weight', help='Your weight in kg', type=int)
+    parser.add_argument('-l', '--length', dest='length', help='Your length in cm', type=int)
     return parser
 
 
