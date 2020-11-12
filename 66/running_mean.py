@@ -3,9 +3,10 @@ def running_mean(sequence):
        returns a sequence of same length with the averages.
        You can assume all items in sequence are numeric."""
 
-    pass
+    means = []
+    list = []
+    for item in sequence:
+        list.append(item)
+        means.append(round(sum(list) / len(list), 2))
 
-
-
-if __name__ == '__main__':
-    print(running_mean([1, 2, 3]))
+    return means
