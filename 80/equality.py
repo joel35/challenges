@@ -31,20 +31,3 @@ def check_equality(list1, list2):
         n = 0
 
     return Equality(n)
-
-
-a = [1, 2, 2, 3, 4]
-b = a[:] + [1, 3, 4, 4]
-c = b[:] + [5]
-
-if __name__ == '__main__':
-    a_b = check_equality(a, b)
-    a_c = check_equality(a, c)
-
-    print(id(a), id(b), id(c))
-    print(a, b, c)
-    print(sorted(a), sorted(b), sorted(c))
-    print(set(a), set(b), set(c))
-
-    print(a_b)
-    print(a_c)
