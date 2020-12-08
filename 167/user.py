@@ -7,6 +7,8 @@ class User:
         """Constructor, base values"""
         self.first_name = first_name
         self.last_name = last_name
+        self.full_name = None
+        self._username = None
 
     @property
     def get_full_name(self):
@@ -14,7 +16,8 @@ class User:
            and using title case for both.
         """
         # TODO 1: you code
-        return f'{self.first_name} {self.last_name}'.title
+        self.full_name = f'{self.first_name} {self.last_name}'.title()
+        return self.full_name
 
     @property
     def username(self):
@@ -26,7 +29,8 @@ class User:
            https://pybit.es/property-decorator.html
         """
         # TODO 2: you code
-        pass
+        self._username = f'{self.first_name[0]}{self.last_name[:7]}'.lower()
+        return self._username
 
     # TODO 3: you code
     #
@@ -37,10 +41,11 @@ class User:
     # see also TESTS for required output
 
     def __str__(self):
-        pass
+        return f'{self.full_name} ({self._username})'
 
     def __repr__(self):
         """Don't hardcode the class name, hint: use a
            special attribute of self.__class__ ...
         """
-        pass
+        class_ = str(self.__class__).split('.')[-1][:-2]
+        return f'{class_}("{self.first_name}", "{self.last_name}")'
