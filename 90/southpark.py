@@ -3,7 +3,7 @@ import csv
 
 import requests
 
-CSV_URL = 'https://raw.githubusercontent.com/pybites/SouthParkData/master/by-season/Season-{}.csv' # noqa E501
+CSV_URL = 'https://raw.githubusercontent.com/pybites/SouthParkData/master/by-season/Season-{}.csv'  # noqa E501
 
 
 def get_season_csv_file(season):
@@ -19,22 +19,31 @@ def get_num_words_spoken_by_character_per_episode(content):
        keys=characters and values=Counter object,
        which is a mapping of episode=>words spoken"""
 
-
     # reader = csv.reader(content)
     # print(reader[0])
     #
     # # data = csv.reader(content)
-    data = content.splitlines()
+    # data = content.splitlines()
 
-    episodes = defaultdict(Counter)
+    csv_reader = csv.reader(content, delimiter=',')
 
-    print(data[1])
+    print(type(content), type(csv_reader))
+
+    # print(writer.writeheader())
+
+    default_dict = defaultdict(Counter)
+
+
+
+
+
+
+    # print(data[0])
+    # print(data[5])
 
 if __name__ == '__main__':
-
     season = 1
 
     content = get_season_csv_file(season)
-
 
     get_num_words_spoken_by_character_per_episode(content)
