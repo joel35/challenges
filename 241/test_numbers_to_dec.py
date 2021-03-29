@@ -29,3 +29,4 @@ def test_type_error():
 
     with pytest.raises(ValueError):
         list_to_decimal([0, 1, 11])
+        list_to_decimal([11, 22, 33])
