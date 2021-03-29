@@ -11,6 +11,7 @@ def test_numbers():
         1234: [1, 2, 3, 4],
         12345: [1, 2, 3, 4, 5],
         12345: [0, 1, 2, 3, 4, 5],
+        1: [0, 0, 0, 0, 0, 1],
     }
 
     for num, lst in samples.items():
@@ -20,9 +21,11 @@ def test_numbers():
 def test_type_error():
     with pytest.raises(TypeError):
         list_to_decimal([True])
+        list_to_decimal([0, 1, True])
         list_to_decimal([-1])
-        list_to_decimal(['a'])
-        list_to_decimal([1.])
+        list_to_decimal([0, 1, -1])
+        list_to_decimal([1, 2, 'a'])
+        list_to_decimal([0, 1.])
 
     with pytest.raises(ValueError):
-        list_to_decimal([11])
+        list_to_decimal([0, 1, 11])
