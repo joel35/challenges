@@ -19,3 +19,7 @@ def list_to_decimal(nums: List[int]) -> int:
             raise ValueError
 
     return int(''.join(map(str, nums)))
+
+
+if __name__ == '__main__':
+    print(list_to_decimal([9]))
