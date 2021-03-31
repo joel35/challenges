@@ -11,7 +11,7 @@ def get_users(passwd: str) -> dict:
     lines = [line.split(':') for line in passwd.strip().splitlines()]
 
     return {
-        user: re.sub(",+", ' ', name).strip() if name else 'unknown'
+        user: re.sub(",+", ' ', name).strip() or 'unknown'
         for (user, name)
         in zip([line[0] for line in lines], [line[4] for line in lines])
     }
