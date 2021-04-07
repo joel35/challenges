@@ -4,6 +4,6 @@ def calculate_gc_content(sequence):
     Returns the percentage of GC content (rounded to the last two digits)
     """
 
-    agct = len([i for i in sequence if i.lower() in ('a', 'g', 'c', 't')])
-    gc = len([i for i in sequence if i.lower() in ('g', 'c')])
+    agct = len([i for i in sequence if i.lower() in 'agct'])
+    gc = len([i for i in sequence if i.lower() in 'gc'])
     return round((gc / agct) * 100, 2)
