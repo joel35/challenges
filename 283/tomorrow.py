@@ -2,6 +2,6 @@ import datetime
 
 
 def tomorrow(date=None):
-    today = datetime.date.today() if not date else date
+    today = date or datetime.date.today()
     return today + datetime.timedelta(days=1)
 
