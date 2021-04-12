@@ -4,4 +4,4 @@ def is_armstrong(n: int) -> bool:
     for digit in digits:
         number += digit ** len(digits)
 
-    return True if number == n else False
+    return number == n
