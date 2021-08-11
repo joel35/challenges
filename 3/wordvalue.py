@@ -19,12 +19,12 @@ LETTER_SCORES = {letter: score for score, letters in scrabble_scores
 def load_words():
     """Load the words dictionary (DICTIONARY constant) into a list and return it"""
     with open(DICTIONARY, 'r') as f_in:
-        return (word for word in f_in.read().splitlines())
+        return [word for word in f_in.read().splitlines()]
 
 
 def calc_word_value(word):
     """Given a word calculate its value using the LETTER_SCORES dict"""
-    return sum((LETTER_SCORES.get(letter, 0) for letter in word.upper()))
+    return sum([LETTER_SCORES.get(letter, 0) for letter in word.upper()])
 
 
 def max_word_value(words):
