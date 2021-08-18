@@ -9,7 +9,7 @@ blog = dict(name='PyBites',
             location='Spain/Australia',
             site='https://pybit.es')
 
-blog_nt = namedtuple('blog_nt', (key for key in blog.keys()))
+blog_nt = namedtuple('blog_nt', blog.keys())
 
 
 def dict2nt(dict_):
