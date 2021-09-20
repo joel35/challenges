@@ -21,8 +21,8 @@ class Domain:
 
     @classmethod
     def parse_url(cls, url):
-        return Domain(url.split('/')[2])
+        return cls(url.split('/')[2])
 
     @classmethod
     def parse_email(cls, email):
-        return Domain(email.split('@')[1])
+        return cls(email.split('@')[1])
