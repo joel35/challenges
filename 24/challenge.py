@@ -26,7 +26,7 @@ class BlogChallenge(Challenge):
 
     @property
     def pretty_title(self):
-        return f'PCC1 - {self.title}'
+        return f'PCC{self.number} - {self.title}'
 
 
 class BiteChallenge(Challenge):
@@ -39,4 +39,4 @@ class BiteChallenge(Challenge):
 
     @property
     def pretty_title(self):
-        return f'Bite 24. {self.title}'
+        return f'Bite {self.number}. {self.title}'
